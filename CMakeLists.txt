@@ -45,6 +45,11 @@ find_package(Qt6 6.2 REQUIRED COMPONENTS
 )
 qt_standard_project_setup()
 
+if (APPLE)
+    find_package(CoreFoundation REQUIRED)
+    find_package(CoreServices REQUIRED)
+endif()
+
 add_subdirectory(src)
 
 # Global CPack options

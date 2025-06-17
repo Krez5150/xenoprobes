@@ -3,3 +3,10 @@ configure_file(xenoprobes_config.h.in ${PROJECT_BINARY_DIR}/include/xenoprobes_c
 add_subdirectory(probeoptimizer)
 add_subdirectory(xenoprobes)
 add_subdirectory(xenoprobes_gui)
+
+if (APPLE AND TARGET xenoprobes_gui)
+    target_link_libraries(xenoprobes_gui PUBLIC
+        CoreFoundation
+        CoreServices
+    )
+endif()
