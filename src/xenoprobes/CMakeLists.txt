@@ -9,6 +9,15 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         Boost::program_options
 )
 
+add_executable(run_comparison
+        run_comparison.cpp
+)
+target_link_libraries(run_comparison PRIVATE
+        probeoptimizer
+        Boost::filesystem
+        Boost::program_options
+)
+
 include(GNUInstallDirs)
 install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

@@ -52,6 +52,10 @@ endif()
 
 add_subdirectory(src)
 
+# Enable testing
+enable_testing()
+add_subdirectory(tests)
+
 # Global CPack options
 set(CPACK_PACKAGE_NAME "XenoProbes")
 set(CPACK_PACKAGE_VENDOR "XenoProbes")
